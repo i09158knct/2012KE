@@ -21,7 +21,7 @@ var ke17 = ke17 || require('./ke17_lib.js');
     [1,-1,0],
     [0,1,0]
   ];
-  console.log("--- javascript");
+  console.log("--- # javascript");
   var check_number, i;
   for(check_number in checks){
     for(i=0,acc=0; i<n; i++){
