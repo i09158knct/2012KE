@@ -1,4 +1,4 @@
-require_relative 'ke17_lib'
+require_relative 'simple_ke17_lib'
 
 if ARGV[0]
   seed = ARGV[0].to_i

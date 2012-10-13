@@ -1,4 +1,4 @@
-require_relative '../ke17_lib.rb'
+require_relative '../simple_ke17_lib.rb'
 
 describe "genSigmoid" do
   context "with no arguments" do
