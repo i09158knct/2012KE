@@ -20,7 +20,7 @@
     };
   };
 
-  ke17.SimpleNode = function(options){
+  ke17.Node = function(options){
     options = options || {
       inputWeights: [1, 1],
       threshold: 1,
