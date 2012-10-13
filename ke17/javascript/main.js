@@ -2,7 +2,7 @@ var ke17 = ke17 || require('./ke17_lib.js');
 (function(){
   var sigmoid = ke17.genSigmoid();
   var evaluationFunction = function(sum, threshold){
-    if(sigmoid(sum, threshold) >= Math.random()){
+    if(sigmoid(sum, threshold) > Math.random()){
       return 1;
     }
     return 0;
@@ -14,7 +14,7 @@ var ke17 = ke17 || require('./ke17_lib.js');
     evaluationFunction: evaluationFunction
   });
 
-  var n = 100000;
+  var n = 1000000;
   var accs = [0,0,0];
   var checks = [
     [1,1,0],

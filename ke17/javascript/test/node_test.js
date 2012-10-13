@@ -2,7 +2,7 @@ TestCase("NodeTest", {
   setUp: function(){
     var stdsigmoid = ke17.genSigmoid();
     this.options = {
-      inputWeights: [3, 2, -1],
+      inputWeights: [1, 1],
       threshold: 1
     };
     this.node = new ke17.Node(this.options);
