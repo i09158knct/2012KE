@@ -15,7 +15,7 @@ var ke17 = ke17 || require('./ke17_lib.js');
   });
 
   var n = 1000000;
-  var accs = [0,0,0];
+  var acc;
   var checks = [
     [1,1,0],
     [1,-1,0],
@@ -24,9 +24,9 @@ var ke17 = ke17 || require('./ke17_lib.js');
   console.log("--- javascript");
   var check_number, i;
   for(check_number in checks){
-    for(i=0; i<n; i++){
-      accs[check_number] += node.input(checks[check_number]);
+    for(i=0,acc=0; i<n; i++){
+      acc += node.input(checks[check_number]);
     }
-    console.log("-", accs[check_number]/n);
+    console.log("-", acc/n);
   }
 }).call(this);
