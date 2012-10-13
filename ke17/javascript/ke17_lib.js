@@ -21,16 +21,12 @@
   };
 
   ke17.Node = function(options){
-    options = options || {
-      inputWeights: [1, 1],
-      threshold: 1,
-      evaluationFunction: function(sum, threshold){
-        return sum >= threshold ? 1 : 0;
-      }
-    };
-    this.inputWeights = options.inputWeights;
-    this.threshold = options.threshold;
-    this.evaluationFunction = options.evaluationFunction;
+    options = options || {};
+    this.inputWeights = options.inputWeights || [1, 1];
+    this.threshold = options.threshold || 1;
+    this.evaluationFunction =
+      options.evaluationFunction ||
+      function(sum, threshold){return sum >= threshold ? 1 : 0;};
     this.input = function(inputs){
       var i, sum = 0;
       for(i in inputs){
