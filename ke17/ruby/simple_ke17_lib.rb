@@ -1,5 +1,5 @@
 def gen_sigmoid(gain = 1)
-  ->(x, offset = 1){ 1 / (1 + Math.exp(offset - gain * x))}
+  ->(x, offset = 1){ 1 / (1 + Math.exp(offset - gain * x)) }
 end
 
 class SimpleNode
