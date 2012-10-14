@@ -1,9 +1,7 @@
 module simpleKe17
 {
-  export function genSigmoid(gain?: number) {
-      if(gain === undefined) gain = 1;
-      return (x: number, offset?: number): number => {
-        if(offset === undefined) offset = 0;
+  export function genSigmoid(gain?: number = 1) {
+      return (x: number, offset?: number = 1): number => {
         return 1 / (1 + Math.exp(offset - gain * x));
       };
   }

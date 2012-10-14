@@ -1,13 +1,9 @@
 var simpleKe17;
 (function (simpleKe17) {
     function genSigmoid(gain) {
-        if(gain === undefined) {
-            gain = 1;
-        }
+        if (typeof gain === "undefined") { gain = 1; }
         return function (x, offset) {
-            if(offset === undefined) {
-                offset = 0;
-            }
+            if (typeof offset === "undefined") { offset = 1; }
             return 1 / (1 + Math.exp(offset - gain * x));
         }
     }
