@@ -13,15 +13,16 @@ var simpleKe17;
     }
     simpleKe17.genSigmoid = genSigmoid;
     var SimpleNode = (function () {
-        function SimpleNode(inputWeights, threshold) {
-            this.inputWeights = [
+        function SimpleNode(inputWeights, threshold, sigmoid) {
+            if (typeof inputWeights === "undefined") { inputWeights = [
                 1, 
                 1
-            ];
-            this.threshold = 1;
-            this.sigmoid = genSigmoid();
+            ]; }
+            if (typeof threshold === "undefined") { threshold = 1; }
+            if (typeof sigmoid === "undefined") { sigmoid = genSigmoid(); }
             this.inputWeights = inputWeights;
             this.threshold = threshold;
+            this.sigmoid = sigmoid;
         }
         SimpleNode.prototype.input = function (inputs) {
             var i;
@@ -32,8 +33,8 @@ var simpleKe17;
             }
             return this.evaluate(sum, this.threshold);
         };
-        SimpleNode.prototype.evaluate = function (sum) {
-            if(this.sigmoid(sum, this.threshold) > Math.random()) {
+        SimpleNode.prototype.evaluate = function (sum, threshold) {
+            if(this.sigmoid(sum, threshold) > Math.random()) {
                 return 1;
             } else {
                 return 0;

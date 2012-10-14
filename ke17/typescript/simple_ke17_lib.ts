@@ -9,13 +9,9 @@ module simpleKe17
   }
 
   export class SimpleNode {
-    private inputWeights: number[] = [1, 1];
-    private threshold: number = 1;
-    private sigmoid: Function = genSigmoid();
-
-    constructor(inputWeights?: number[], threshold?: number) {
-      this.inputWeights = inputWeights;
-      this.threshold = threshold;
+    constructor(private inputWeights?: number[] = [1, 1],
+                private threshold?: number = 1,
+                private sigmoid?: Function = genSigmoid()) {
     }
 
     public input(inputs: number[]): number {
@@ -26,8 +22,8 @@ module simpleKe17
       return this.evaluate(sum, this.threshold);
     }
 
-    private evaluate(sum: number): number {
-      if(this.sigmoid(sum, this.threshold) > Math.random()){
+    private evaluate(sum: number, threshold: number): number {
+      if(this.sigmoid(sum, threshold) > Math.random()){
         return 1
       }else{
         return 0
