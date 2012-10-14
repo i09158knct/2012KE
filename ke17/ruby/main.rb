@@ -7,7 +7,7 @@ else
 end
 srand seed
 
-node = SimpleNode.new([3,2,-1])
+node = SimpleNode.new([3, 2, -1])
 
 n = 1000000
 checks = [

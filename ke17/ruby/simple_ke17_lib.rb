@@ -1,9 +1,9 @@
-def genSigmoid(gain=1)
-  ->(x, offset=1){ 1 / (1 + Math.exp(offset - gain * x))}
+def genSigmoid(gain = 1)
+  ->(x, offset = 1){ 1 / (1 + Math.exp(offset - gain * x))}
 end
 
 class SimpleNode
-  def initialize(inputWeights=[1,1], threshold=1)
+  def initialize(inputWeights = [1, 1], threshold = 1)
     @inputWeights = inputWeights
     @threshold = threshold
     @sigmoid = genSigmoid
@@ -19,11 +19,11 @@ class SimpleNode
 
   private
 
-  def evaluate(sum)
-    if @sigmoid[sum, @threshold] > rand
-      return 1
-    else
-      return 0
+    def evaluate(sum)
+      if @sigmoid[sum, @threshold] > rand
+        return 1
+      else
+        return 0
+      end
     end
-  end
 end
