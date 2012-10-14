@@ -2,7 +2,7 @@
   'use strict';
   var simpleKe17 = this.simpleKe17 = {};
 
-  simpleKe17.genSigmoid = function genSigmoid(gain){
+  simpleKe17.genSigmoid = function(gain){
     if(gain === undefined) gain = 1;
     return function(x, offset){
       if(offset === undefined) offset = 0;

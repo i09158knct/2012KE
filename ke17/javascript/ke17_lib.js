@@ -12,7 +12,7 @@
     root.ke17 = ke17;
   }
 
-  ke17.genSigmoid = function genSigmoid(gain){
+  ke17.genSigmoid = function(gain){
     if(gain === undefined) gain = 1;
     return function(x, offset){
       if(offset === undefined) offset = 0;
