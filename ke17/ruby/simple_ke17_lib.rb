@@ -10,10 +10,10 @@ class SimpleNode
   end
 
   def input(inputs)
-    weighted_inputs = inputs.zip(@input_weights).map {|pair|
-      pair[0] * (pair[1] || 0)
-    }
-    sum = weighted_inputs.inject(:+)
+    sum = 0
+    inputs.each_with_index do |input, i|
+      sum += input * (@input_weights[i] || 1)
+    end
     evaluate sum
   end
 
