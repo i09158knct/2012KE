@@ -2,7 +2,7 @@
   var root = this;
   var ke17 = {};
 
-  // via Backbone
+  // via Underscore
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
       exports = module.exports = ke17;
