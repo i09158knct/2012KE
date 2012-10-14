@@ -12,7 +12,7 @@ class SimpleNode
   def input(inputs)
     sum = 0
     inputs.each_with_index do |input, i|
-      sum += input * (@input_weights[i] || 1)
+      sum += input * (@input_weights[i] || 0)
     end
     evaluate(sum)
   end
