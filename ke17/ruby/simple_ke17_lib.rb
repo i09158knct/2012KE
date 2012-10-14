@@ -6,7 +6,7 @@ class SimpleNode
   def initialize(input_weights = [1, 1], threshold = 1)
     @input_weights = input_weights
     @threshold = threshold
-    @sigmoid = gen_sigmoid
+    @sigmoid = gen_sigmoid()
   end
 
   def input(inputs)
@@ -14,7 +14,7 @@ class SimpleNode
     inputs.each_with_index do |input, i|
       sum += input * (@input_weights[i] || 1)
     end
-    evaluate sum
+    evaluate(sum)
   end
 
   private
