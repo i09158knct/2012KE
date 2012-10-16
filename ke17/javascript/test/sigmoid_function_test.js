@@ -4,6 +4,6 @@ TestCase("sigmoidFunctionTest", {
 
   "test genSigmoid() should return standard sigmoid function": function(){
     var sigmoid = ke17.genSigmoid();
-    assertEquals(sigmoid(0), 0.5);
+    assertEquals(sigmoid(1), 0.5);
   }
 });
