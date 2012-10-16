@@ -14,10 +14,11 @@ node = simple_ke17_lib.SimpleNode([3, 2, -1])
 
 N = 1000000
 checks = [
-    [1,1,0],
-    [1,-1,0],
-    [0,1,0]
+    [1, 1, 0],
+    [1, -1, 0],
+    [0, 1, 0]
 ]
+
 print("--- # python(seed: %s)" % seed)
 for check in checks:
     acc = 0

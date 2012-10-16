@@ -38,10 +38,11 @@ module simpleKe17
   var n = 1000000;
   var acc;
   var checks = [
-    [1,1,0],
-    [1,-1,0],
-    [0,1,0]
+    [1, 1, 0],
+    [1, -1, 0],
+    [0, 1, 0]
   ];
+
   console.log("--- # javascript");
   var check_number, i;
   for(check_number in checks){

@@ -7,10 +7,11 @@ node = SimpleNode.new([3, 2, -1])
 
 N = 1000000
 checks = [
-  [1,1,0],
-  [1,-1,0],
-  [0,1,0]
+  [1, 1, 0],
+  [1, -1, 0],
+  [0, 1, 0]
 ]
+
 puts "--- # ruby(seed: #{seed})"
 checks.each do |check|
   acc = 0
