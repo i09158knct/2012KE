@@ -13,7 +13,9 @@ class SimpleNode:
         self.sigmoid = gen_sigmoid()
 
     def input(self, inputs):
-        i_sum = sum([inputs[i] * self.input_weights[i] for i in range(0, len(inputs))])
+        i_sum = 0
+        for i in range(0, len(inputs)):
+            i_sum += inputs[i] * self.input_weights[i]
         return self._evaluate(i_sum, self.threshold)
 
     def _evaluate(self, i_sum, threshold=1):
