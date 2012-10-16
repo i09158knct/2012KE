@@ -11,7 +11,7 @@ var simpleKe17;
     var SimpleNode = (function () {
         function SimpleNode(inputWeights, threshold, sigmoid) {
             if (typeof inputWeights === "undefined") { inputWeights = [
-                1, 
+                1,
                 1
             ]; }
             if (typeof threshold === "undefined") { threshold = 1; }
@@ -38,36 +38,36 @@ var simpleKe17;
         };
         return SimpleNode;
     })();
-    simpleKe17.SimpleNode = SimpleNode;    
+    simpleKe17.SimpleNode = SimpleNode;
 })(simpleKe17 || (simpleKe17 = {}));
 
 (function () {
     var SimpleNode;
     var node = new simpleKe17.SimpleNode([
-        3, 
-        2, 
+        3,
+        2,
         -1
     ], 1);
     var n = 1000000;
     var acc;
     var checks = [
         [
-            1, 
-            1, 
+            1,
+            1,
             0
-        ], 
+        ],
         [
-            1, 
-            -1, 
+            1,
+            -1,
             0
-        ], 
+        ],
         [
-            0, 
-            1, 
+            0,
+            1,
             0
         ]
     ];
-    console.log("--- # javascript");
+    console.log("--- # typescript");
     var check_number;
     var i;
 

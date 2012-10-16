@@ -43,7 +43,7 @@ module simpleKe17
     [0, 1, 0]
   ];
 
-  console.log("--- # javascript");
+  console.log("--- # typescript");
   var check_number, i;
   for(check_number in checks){
     for(i=0,acc=0; i<n; i++){
