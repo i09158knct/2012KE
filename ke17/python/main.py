@@ -10,7 +10,7 @@ else:
     seed = time.time()
 random.seed(seed)
 
-node = simple_ke17_lib.SimpleNode([3, 2, -1])
+node = simple_ke17_lib.SimpleNode([3, 2, -1], 1)
 
 N = 1000000
 checks = [

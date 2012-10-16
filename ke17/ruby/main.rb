@@ -3,7 +3,7 @@ require_relative 'simple_ke17_lib'
 seed = (ARGV[0] || srand()).to_i
 srand(seed)
 
-node = SimpleNode.new([3, 2, -1])
+node = SimpleNode.new([3, 2, -1], 1)
 
 N = 1000000
 checks = [
