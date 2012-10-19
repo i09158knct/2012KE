@@ -13,6 +13,7 @@
   }
 
   neural_networks.Node = function(options) {
+    var thisNode = this;
     options = options || {};
     this.inputWeights = options.inputWeights || [1, 1];
     this.threshold = options.threshold || 1;
@@ -28,7 +29,7 @@
         sum += inputs[i] * (this.inputWeights[i] || 0);
       }
       output = this.evaluate(sum, this.threshold);
-      this.onOutput(inputs, output);
+      this.onOutput(inputs, output, thisNode);
       return output;
     };
   };
