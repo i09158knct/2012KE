@@ -16,7 +16,8 @@
     var thisNode = this;
     options = options || {};
     this.inputWeights = options.inputWeights || [1, 1];
-    this.threshold = options.threshold || 1;
+    this.threshold = options.threshold;
+    if(this.threshold === undefined) { this.threshold = 1; }
     this.evaluate =
       options.evaluate ||
       function(sum, threshold) { return sum >= threshold ? 1 : 0; };
