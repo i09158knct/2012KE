@@ -19,12 +19,16 @@
     this.evaluate =
       options.evaluate ||
       function(sum, threshold) { return sum >= threshold ? 1 : 0; };
+    this.onOutput =
+      options.onOutput ||
+      function() {};
     this.input = function(inputs) {
       var sum = 0, output, i;
       for(i in inputs) {
         sum += inputs[i] * (this.inputWeights[i] || 0);
       }
       output = this.evaluate(sum, this.threshold);
+      this.onOutput(inputs, output);
       return output;
     };
   };
