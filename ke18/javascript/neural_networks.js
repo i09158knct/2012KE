@@ -24,7 +24,9 @@
       options.onOutput ||
       function() {};
     this.input = function(inputs) {
-      var sum = 0, output, i;
+      var sum = 0;
+      var output;
+      var i;
       for(i in inputs) {
         sum += inputs[i] * (this.inputWeights[i] || 0);
       }
