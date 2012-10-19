@@ -13,8 +13,8 @@ var sys = require('sys');
     var ssTable = {};
     ssData.forEach(function(pairIO, index) {
       var inputs = pairIO[0];
-      var correctOutput = pairIO[1][0];
-      ssTable[inputs] = correctOutput;
+      var correctOutputs = pairIO[1];
+      ssTable[inputs] = correctOutputs;
     });
     return ssTable;
   }
@@ -24,8 +24,8 @@ var sys = require('sys');
 
   var stepCount = 0;
   var feedback = function(inputs, output, node) {
-    var correctOutput = supervisorySignalTable[inputs];
-    var deltaOutput = correctOutput - output;
+    var correctOutputs = supervisorySignalTable[inputs][0];
+    var deltaOutput = correctOutputs - output;
     var deltaInputWeights = inputs.map(function(input, index) {
       return learningRate * deltaOutput * input;
     });
@@ -38,7 +38,7 @@ var sys = require('sys');
     console.log(
       ++stepCount,
       inputs.toString(),
-      correctOutput,
+      correctOutputs,
       node.inputWeights.toString(),
       node.threshold,
       output,
@@ -59,9 +59,9 @@ var sys = require('sys');
   // to don't make functions within a loop (and to silence jsLint
   var comparison = function (pairIO, index) {
     var inputs = pairIO[0];
-    var correctOutput = pairIO[1][0];
+    var correctOutputs = pairIO[1][0];
     var output = node.input(inputs);
-    var output_is_correct = (output === correctOutput);
+    var output_is_correct = (output === correctOutputs);
     outputs_is_all_correct &= output_is_correct;
   };
 
