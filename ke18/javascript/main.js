@@ -1,17 +1,9 @@
-var ke17 = ke17 || require('./ke17_lib.js');
+var nn = nn || require('./neural_networks.js');
 (function(){
-  var sigmoid = ke17.genSigmoid();
-  var evaluationFunction = function(sum, threshold){
-    if(sigmoid(sum, threshold) > Math.random()){
-      return 1;
-    }
-    return 0;
-  };
 
-  var node = new ke17.Node({
+  var node = new nn.Node({
     inputWeights: [3, 2, -1],
-    threshold: 1,
-    evaluationFunction: evaluationFunction
+    threshold: 1
   });
 
   var n = 1000000;
