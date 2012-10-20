@@ -13,7 +13,8 @@
   simpleKe17.SimpleNode = function(options){
     options = options || {};
     this.inputWeights = options.inputWeights || [1, 1];
-    this.threshold = options.threshold || 1;
+    this.threshold = options.threshold;
+    if(this.threshold === undefined) { this.threshold = 1; }
     this.sigmoid = simpleKe17.genSigmoid();
 
     this.evaluationFunction = function(sum, threshold){

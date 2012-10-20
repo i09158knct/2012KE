@@ -23,7 +23,8 @@
   ke17.Node = function(options){
     options = options || {};
     this.inputWeights = options.inputWeights || [1, 1];
-    this.threshold = options.threshold || 1;
+    this.threshold = options.threshold;
+    if(this.threshold === undefined) { this.threshold = 1; }
     this.evaluationFunction =
       options.evaluationFunction ||
       function(sum, threshold){return sum >= threshold ? 1 : 0;};
