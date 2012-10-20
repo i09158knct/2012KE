@@ -23,7 +23,7 @@ var sys = require('sys');
   var learningRate = 1;
 
   var stepCount = 0;
-  var feedback = function(inputs, output, node) {
+  var learn = function(inputs, output, node) {
     var correctOutput = supervisorySignalTable[inputs][0];
     var deltaOutput = correctOutput - output;
     var deltaInputWeights = inputs.map(function(input, index) {
@@ -51,7 +51,7 @@ var sys = require('sys');
   var node = new neural_network.Node({
     inputWeights: [0, 0],
     threshold: 0,
-    onOutput: feedback
+    onOutput: learn
   });
 
   var outputs_is_all_correct = false;
