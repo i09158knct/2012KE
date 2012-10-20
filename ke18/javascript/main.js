@@ -30,22 +30,23 @@ var sys = require('sys');
       return learningRate * deltaOutput * input;
     });
     var deltaThreshold = - learningRate * deltaOutput;
-    node.inputWeights = node.inputWeights.map(function(inputWeight, index) {
-      return inputWeight + deltaInputWeights[index];
-    });
-    node.threshold = node.threshold + deltaThreshold;
 
     console.log(
       ++stepCount,
       inputs.toString(),
-      correctOutput,
-      node.inputWeights.toString(),
-      node.threshold,
       output,
+      correctOutput,
       deltaOutput,
+      node.inputWeights.toString(),
       deltaInputWeights.toString(),
+      node.threshold,
       deltaThreshold
     );
+
+    node.inputWeights = node.inputWeights.map(function(inputWeight, index) {
+      return inputWeight + deltaInputWeights[index];
+    });
+    node.threshold = node.threshold + deltaThreshold;
   };
 
   var node = new neural_network.Node({
